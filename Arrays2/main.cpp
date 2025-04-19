@@ -2,6 +2,7 @@
 using namespace std;
 
 #define delimiter "\n------------------------------------\n"
+#define delimiter2 "\n===================================\n"
 
 const int ROWS = 4;
 const int COLS = 10;
@@ -61,6 +62,7 @@ void main()
 	cout << "Минимальное значение в массиве: " << Min(arr, n) << endl;
 	cout << "Максимальное значение в массиве: " << Max(arr, n) << endl;
 
+	cout << delimiter << endl;
 
 	const int SIZE = 8;
 	int brr[SIZE];
@@ -76,16 +78,16 @@ void main()
 	cout << "Максимальное значение в массиве: " << Max(brr, SIZE) << endl;
 	Print(brr, SIZE);
 	int shifts;
-	cout << "Введите количество сдигов: "; cin >> shifts;
-	ShiftLeft(brr, SIZE, shifts);
-	Print(brr, SIZE);
+	//cout << "Введите количество сдигов: "; cin >> shifts;
+	//ShiftLeft(brr, SIZE, shifts);
+	//Print(brr, SIZE);
 
-	cout << "Введите количество сдвигов: "; cin >> shifts;
-	ShiftRight(brr, SIZE, shifts);
+	//cout << "Введите количество сдвигов: "; cin >> shifts;
+	//ShiftRight(brr, SIZE, shifts);
 
 
 
-	cout << delimiter << endl;
+	cout << delimiter2 << endl;
 
 
 	int i_arr_2[ROWS][COLS] =              //объявление двумерного массива
