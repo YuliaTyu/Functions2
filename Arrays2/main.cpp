@@ -20,22 +20,28 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 void Sort(int arr[], const int n);     //сортировка массива
 void Sort(double arr[], const int n);
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 int Sum(int arr[], const int n);        //сумма массива
 double Sum(double arr[], const int n);
 int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 double Avg(int arr[], const int n);     //среднеарифметическое
 double Avg(double arr[], const int n);
 double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS);
+
 
 int Min(int arr[], const int n);
 double Min(double arr[], const int n);
 int Min(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Min(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 int Max(int arr[], const int n);
 double Max(double arr[], const int n);
 int Max(int arr[ROWS][COLS], const int ROWS, const int COLS);
+double Max(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void  ShiftLeft(int arr[], const int n, const int shifts); // сдвиг влево
 void  ShiftLeft(double arr[], const int n, const int shifts);
@@ -245,6 +251,31 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	cout << "Колич итераций" << iter << endl;
 	cout << "Колич обменов" << exch << endl;
 }
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int iter = 0;
+	int exch = 0;
+	for (int i = 0; i < ROWS; i++)
+		for (int j = 0; j < COLS; j++)
+		{
+			for (int k = i; k < ROWS; k++)
+			{
+				for (int l = k == i ? j + 1 : 0; l < COLS; l++)//int l = k > i ? 0 : j + 1
+				{
+					iter++;
+					if (arr[k][l] < arr[i][j])
+					{
+						double buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+						exch++;
+					}
+				}
+			}
+		}
+	cout << "Колич итераций" << iter << endl;
+	cout << "Колич обменов" << exch << endl;
+}
 
 int Sum(int arr[], const int n)
 {
@@ -277,6 +308,19 @@ int Sum(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	return sum;
 
 }
+double Sum(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double sum = 0;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			sum += arr[i][j];
+		}
+	}
+	return sum;
+
+}
 
 
 double Avg(int arr[], const int n)
@@ -291,7 +335,10 @@ double Avg(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	return (double)Sum(arr, ROWS, COLS) / ROWS / COLS;
 }
-
+double Avg(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	return (double)Sum(arr, ROWS, COLS) / ROWS / COLS;
+}
 
 int Min(int arr[], const int n)
 {
@@ -314,6 +361,19 @@ double Min(double arr[], const int n)
 int Min(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	int min = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] < min)min = arr[i][j];
+		}
+
+	}
+	return min;
+}
+double Min(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double min = arr[0][0];
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++)
@@ -357,7 +417,19 @@ int Max(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return max;
 }
+double Max(double arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	double max = arr[0][0];
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			if (arr[i][j] > max)max = arr[i][j];
+		}
 
+	}
+	return max;
+}
 
 void  ShiftLeft(int arr[], const int n, const int shifts)
 {
