@@ -11,40 +11,26 @@ void FillRand(double arr[], const int n);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-void Print(T arr[], const int n);    //выводит массив на экран
-template<typename T>
-void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void Print(T arr[], const int n);    //выводит массив на экран
+template<typename T>void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-void Sort(T arr[], const int n);     //сортировка массива
-template<typename T>
-void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>void Sort(T arr[], const int n);     //сортировка массива
+template<typename T>void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T Sum(T arr[], const int n);        //сумма массива
-template<typename T>
-T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T Sum(T arr[], const int n);        //сумма массива
+template<typename T>T Sum(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-double Avg(T arr[], const int n);     //среднеарифметическое
-template<typename T>
-double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>double Avg(T arr[], const int n);     //среднеарифметическое
+template<typename T>double Avg(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T Min(T arr[], const int n);
-template<typename T>
-T Min(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T Min(T arr[], const int n);
+template<typename T>T Min(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-T Max(T arr[], const int n);
-template<typename T>
-T Max(T arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>T Max(T arr[], const int n);
+template<typename T>T Max(T arr[ROWS][COLS], const int ROWS, const int COLS);
 
-template<typename T>
-void  ShiftLeft(T arr[], const int n, const int shifts); // сдвиг влево
-template<typename T>
-void  ShiftRight(T arr[], const int n, const int shifts);
+template<typename T>void  ShiftLeft(T arr[], const int n, const int shifts); // сдвиг влево
+template<typename T>void  ShiftRight(T arr[], const int n, const int shifts);
 
 
 void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shifts);
