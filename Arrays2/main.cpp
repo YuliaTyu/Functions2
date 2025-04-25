@@ -231,6 +231,7 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	int iter = 0;
 	int exch = 0;
 	for (int i = 0; i < ROWS; i++)
+	{
 		for (int j = 0; j < COLS; j++)
 		{
 			for (int k = i; k < ROWS; k++)
@@ -240,14 +241,15 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 					iter++;
 					if (arr[k][l] < arr[i][j])
 					{
-						int buffer = arr[i][j];
-						arr[i][j] = arr[k][l];
+						int buffer = arr[i][j];  //выбранный элемент arr[i][j]
+						arr[i][j] = arr[k][l];   // перебираемый элемент arr[k][l]
 						arr[k][l] = buffer;
 						exch++;
 					}
 				}
 			}
 		}
+	}
 	cout << "Колич итераций" << iter << endl;
 	cout << "Колич обменов" << exch << endl;
 }
@@ -256,6 +258,7 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 	int iter = 0;
 	int exch = 0;
 	for (int i = 0; i < ROWS; i++)
+	{
 		for (int j = 0; j < COLS; j++)
 		{
 			for (int k = i; k < ROWS; k++)
@@ -273,6 +276,7 @@ void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS)
 				}
 			}
 		}
+	}
 	cout << "Колич итераций" << iter << endl;
 	cout << "Колич обменов" << exch << endl;
 }
